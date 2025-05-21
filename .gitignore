@@ -28,3 +28,5 @@ TODO.md
 .env
 data/
 data/*
+
+*storybook.log
