@@ -4,6 +4,7 @@ function App() {
     return (
         <>
             <Button>Test</Button>
+            <div className="bg-blue-400">moo</div>
         </>
     );
 }

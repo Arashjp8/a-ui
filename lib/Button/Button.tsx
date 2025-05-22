@@ -7,7 +7,7 @@ interface ButtonProps {
 export default function Button({ children }: ButtonProps) {
     return (
         <>
-            <button>{children}</button>
+            <button className="bg-red-500">{children}</button>
         </>
     );
 }
