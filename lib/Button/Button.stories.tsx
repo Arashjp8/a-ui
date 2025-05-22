@@ -39,7 +39,11 @@ export const Playground: Story = {
         disabled: false,
         fullWidth: false,
         customColor: false,
+        loadng: false,
         children: "Button",
+    },
+    argTypes: {
+        loadingSpinner: { table: { disable: true } },
     },
 };
 
@@ -48,6 +52,9 @@ export const Contained: Story = {
         variant: "contained",
         children: "Contained Button",
     },
+    argTypes: {
+        loadingSpinner: { table: { disable: true } },
+    },
 };
 
 export const Outlined: Story = {
@@ -55,12 +62,18 @@ export const Outlined: Story = {
         variant: "outlined",
         children: "Outlined Button",
     },
+    argTypes: {
+        loadingSpinner: { table: { disable: true } },
+    },
 };
 
 export const Text: Story = {
     args: {
         variant: "text",
         children: "Text Button",
+    },
+    argTypes: {
+        loadingSpinner: { table: { disable: true } },
     },
 };
 
@@ -70,6 +83,9 @@ export const Disabled: Story = {
         disabled: true,
         children: "Disabled Button",
     },
+    argTypes: {
+        loadingSpinner: { table: { disable: true } },
+    },
 };
 
 export const FullWidth: Story = {
@@ -77,5 +93,8 @@ export const FullWidth: Story = {
         variant: "contained",
         fullWidth: true,
         children: "Full Width Button",
+    },
+    argTypes: {
+        loadingSpinner: { table: { disable: true } },
     },
 };

@@ -119,3 +119,29 @@ describe(`Component: ${Button.name}`, () => {
         expect(getButton()).toHaveAttribute("type", "submit");
     });
 });
+
+describe(`Component: ${Button.name} loading state`, () => {
+    it("renders default LoadingSpinner when loading is true", () => {
+        render(<Button loading>Loading</Button>);
+        const spinner = screen.getByRole("status"); // assuming LoadingSpinner uses role="status" or add testid if needed
+        expect(spinner).toBeInTheDocument();
+        expect(screen.queryByText("Loading")).toBeNull(); // children hidden
+    });
+
+    it("renders custom loadingSpinner when loading is true and loadingSpinner provided", () => {
+        const CustomSpinner = () => <div data-testid="custom-spinner">Custom</div>;
+        render(
+            <Button loading loadingSpinner={<CustomSpinner />}>
+                Loading
+            </Button>,
+        );
+
+        expect(screen.getByTestId("custom-spinner")).toBeInTheDocument();
+        expect(screen.queryByText("Loading")).toBeNull(); // children hidden
+    });
+
+    it("renders children when loading is false", () => {
+        render(<Button loading={false}>Not Loading</Button>);
+        expect(screen.getByText("Not Loading")).toBeInTheDocument();
+    });
+});

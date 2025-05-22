@@ -3,7 +3,9 @@ import { Button } from "a-ui";
 function App() {
     return (
         <>
-            <Button size="small">Test</Button>
+            <Button size="small" loading={true}>
+                Test
+            </Button>
         </>
     );
 }
