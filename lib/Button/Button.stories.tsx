@@ -8,29 +8,74 @@ const meta: Meta<typeof Button> = {
         layout: "centered",
     },
     tags: ["autodocs"],
+    argTypes: {
+        variant: {
+            control: "radio",
+            options: ["contained", "outlined", "text"],
+        },
+        size: {
+            control: "radio",
+            options: ["small", "medium", "large"],
+        },
+        color: {
+            control: "radio",
+            options: ["primary", "success", "error", "info"],
+        },
+        disabled: { control: "boolean" },
+        fullWidth: { control: "boolean" },
+        customColor: { control: "boolean" },
+    },
 };
 
 export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Solid: Story = {
+export const Playground: Story = {
     args: {
-        variant: "solid",
+        variant: "contained",
+        size: "medium",
+        color: "primary",
+        disabled: false,
+        fullWidth: false,
+        customColor: false,
         children: "Button",
     },
 };
 
-export const Outline: Story = {
+export const Contained: Story = {
     args: {
-        variant: "outline",
-        children: "Button",
+        variant: "contained",
+        children: "Contained Button",
     },
 };
 
-export const Ghost: Story = {
+export const Outlined: Story = {
     args: {
-        variant: "ghost",
-        children: "Button",
+        variant: "outlined",
+        children: "Outlined Button",
+    },
+};
+
+export const Text: Story = {
+    args: {
+        variant: "text",
+        children: "Text Button",
+    },
+};
+
+export const Disabled: Story = {
+    args: {
+        variant: "contained",
+        disabled: true,
+        children: "Disabled Button",
+    },
+};
+
+export const FullWidth: Story = {
+    args: {
+        variant: "contained",
+        fullWidth: true,
+        children: "Full Width Button",
     },
 };
