@@ -153,14 +153,14 @@ export default function Button({
                 fullWidth && "w-full",
                 // variant styling
                 !customColor &&
-                variant === "contained" && [
-                    styles.border,
-                    styles.bg,
-                    styles.text,
-                    styles.hover,
-                    styles.active,
-                    "shadow-md",
-                ],
+                    variant === "contained" && [
+                        styles.border,
+                        styles.bg,
+                        styles.text,
+                        styles.hover,
+                        styles.active,
+                        "shadow-md",
+                    ],
                 !customColor && variant === "outlined" && ["border", styles.border, styles.text, styles.hover],
                 !customColor && variant === "text" && [styles.text, styles.hover],
                 // size
@@ -178,12 +178,12 @@ export default function Button({
 
             {loading
                 ? loadingSpinner ?? (
-                    <LoadingSpinner
-                        size={size === "small" ? "small" : "medium"}
-                        color={styles.loading}
-                        className="animate-spin"
-                    />
-                )
+                      <LoadingSpinner
+                          size={size === "small" ? "small" : "medium"}
+                          color={styles.loading}
+                          className="animate-spin"
+                      />
+                  )
                 : children}
         </button>
     );

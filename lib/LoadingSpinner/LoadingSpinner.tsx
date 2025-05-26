@@ -1,7 +1,7 @@
 import LoaderIcon from "../assets/Icons/LoaderIcon";
 import Icon from "../Icon/Icon";
 
-export type LoadingColor = "primary" | "onPrimary" | "onError" | "onSuccess" | "onInfo" | "error" | "success" | "info";
+export type LoadingColor = "primary" | "onPrimary" | "error" | "onError" | "success" | "onSuccess" | "info" | "onInfo";
 
 interface LoadingSpinnerProps {
     size?: "small" | "medium" | "large" | "xlarge" | "xxlarge";
@@ -20,12 +20,12 @@ const sizeClasses = {
 const colorClasses = {
     primary: "text-primary",
     onPrimary: "text-on-primary",
-    onError: "text-on-error",
-    onInfo: "text-on-info",
-    onSuccess: "text-on-success",
     error: "text-error",
+    onError: "text-on-error",
     success: "text-success",
+    onSuccess: "text-on-success",
     info: "text-info",
+    onInfo: "text-on-info",
 };
 
 export default function LoadingSpinner({ size = "medium", color = "primary", className = "" }: LoadingSpinnerProps) {
