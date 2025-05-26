@@ -1,7 +1,7 @@
 import { Button } from "a-ui";
+import { useState } from "react";
 import CircularProgress from "../lib/CircularProgress/CircularProgress";
 import Switch from "../lib/Switch/Switch";
-import { useState } from "react";
 
 function App() {
     const [checked, setChecked] = useState<boolean>(false);
